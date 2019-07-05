@@ -1,0 +1,65 @@
+[33mcommit 658da66003fead436f5c514d7fe879f4a115c132[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Ougni Chakraborty <mail@ougni.me>
+Date:   Wed Jul 3 14:26:40 2019 -0400
+
+    adding output folder
+
+[33mcommit 572bb5cec343961ea1a99e5fedddba1dde8abcc9[m
+Author: ougni <mail@ougni.me>
+Date:   Wed Jul 3 14:22:59 2019 -0400
+
+    formatted
+
+[33mcommit 990b573ff4be47b7a3eebf7b9ccee9de6c6f211a[m
+Author: ougni <mail@ougni.me>
+Date:   Wed Jul 3 14:19:46 2019 -0400
+
+    Update README.md
+
+[33mcommit 9510e82b6a05f848dcf42991af6c93bbf5488171[m
+Author: ougni <mail@ougni.me>
+Date:   Wed Jul 3 14:19:34 2019 -0400
+
+    Update README.md
+
+[33mcommit eef8937668c31eaf0eb993c79a329eab67a83cc3[m
+Author: ougni <mail@ougni.me>
+Date:   Wed Jul 3 14:19:02 2019 -0400
+
+    updating the usage instructions
+
+[33mcommit 2caf0c69b214be39b58d2883eb2b53d8de752898[m
+Author: ougni <mail@ougni.me>
+Date:   Wed Jul 3 11:53:58 2019 -0400
+
+    Update readme.md
+
+[33mcommit 7386ea41868051eb406b0054620c35dfaa0d153c[m
+Author: ougni <mail@ougni.me>
+Date:   Wed Jul 3 11:53:31 2019 -0400
+
+    updating scope of code folder
+
+[33mcommit c8d528dcbdf60c5543b3f24c86924db568453e82[m
+Author: Ougni Chakraborty <mail@ougni.me>
+Date:   Tue Jul 2 14:13:18 2019 -0400
+
+    ignoring only the .dta files inside data folder
+
+[33mcommit 237bf396a4c8c9c8995cc41e5f7b4f91f8f2d3fc[m
+Author: Ougni Chakraborty <mail@ougni.me>
+Date:   Tue Jul 2 14:05:06 2019 -0400
+
+    readme for each nested folder is initiated
+
+[33mcommit 727a879e4a47dd78c9c53086b1399ef84cdb0f01[m
+Author: ougni <mail@ougni.me>
+Date:   Tue Jul 2 13:47:17 2019 -0400
+
+    create .gitignore
+
+[33mcommit be5c485e7b6b136216346e50f3acab88c784d5e3[m
+Author: ougni <mail@ougni.me>
+Date:   Tue Jul 2 12:31:40 2019 -0400
+
+    Initial commit
