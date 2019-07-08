@@ -12,4 +12,4 @@ esttab using USDummyModelTripleInteraction2.csv, label nostar plain not replace
 eststo: reg lnMortality lnMortality_10 lnMortality_10Sq i.country USDummy##i.Agecat##i.YearDecade
 esttab using lnUSDummyModelTripleInteraction.csv, label nostar plain not
 
-esttab using lnUSDummyModelTripleInteractionLess5Countries.csv, label nostar plain not 
+esttab using lnUSDummyModelTripleInteractionLess5Countries.csv, label nostar plain not
