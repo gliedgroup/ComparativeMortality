@@ -9,7 +9,13 @@ esttab using USDummyModelTripleInteraction.rtf, label replace
 esttab using USDummyModelTripleInteraction2.csv, label nostar plain not replace
 
 
-eststo: reg lnMortality lnMortality_10 lnMortality_10Sq i.country USDummy##i.Agecat##i.YearDecade
-esttab using lnUSDummyModelTripleInteraction.csv, label nostar plain not
+eststo AllCountries: reg lnMortality lnMortality_10 lnMortality_10Sq2 i.country USDummy##i.Agecat##i.YearDecade
 
+
+drop if country == 16 | country == 13 | country == 6 | country == 5
+
+eststo LessFiveCountries: reg lnMortality lnMortality_10 lnMortality_10Sq2 i.country USDummy##i.Agecat##i.YearDecade
+
+
+esttab using lnUSDummyModelTripleInteractionlnMortSq2.csv, label mtitles nostar plain not replace
 esttab using lnUSDummyModelTripleInteractionLess5Countries.csv, label nostar plain not
