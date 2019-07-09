@@ -14,8 +14,20 @@ eststo AllCountries: reg lnMortality lnMortality_10 lnMortality_10Sq2 i.country 
 
 drop if country == 16 | country == 13 | country == 6 | country == 5
 
-eststo LessFiveCountries: reg lnMortality lnMortality_10 lnMortality_10Sq2 i.country USDummy##i.Agecat##i.YearDecade
+eststo LessFourCountries: reg lnMortality lnMortality_10 lnMortality_10Sq2 i.country USDummy##i.Agecat##i.YearDecade
 
 
 esttab using lnUSDummyModelTripleInteractionlnMortSq2.csv, label mtitles nostar plain not replace
-esttab using lnUSDummyModelTripleInteractionLess5Countries.csv, label nostar plain not
+
+
+* Leaving out cohort terms
+
+eststo AllCountries: reg lnMortality i.country USDummy##ib(1).Agecat##ib(1950).YearDecade
+
+
+drop if country == 16 | country == 13 | country == 6 | country == 5
+
+eststo LessFourCountries: reg lnMortality i.country USDummy##ib(1).Agecat##ib(1950).YearDecade
+
+
+esttab using lnUSDummyModelTripleInteractionNoLagVars.csv, label mtitles nostar plain not replace
