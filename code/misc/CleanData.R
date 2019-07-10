@@ -51,4 +51,15 @@ mJustTriple$year <- NULL
 
 AllCountriesTotal <- subset(mJustTriple, Model == "AllCountriesTotal")
 
-sAllCountriesTotal <-spread(AllCountriesTotal, variable, value) #reshape into wide
+Twenties <- JustTriple[c(1:12), c(1,10:15)]
+Twenties.df <-rbind(Twenties, year = year)
+
+mTwenties <- melt(Twenties, id = c("Model")) #reshape into long
+mTwenties$year<- str_sub(mTwenties$variable, start = -4)# Get Year 
+
+AllFemale20 <- subset(mTwenties, Model=="AllCountriesFemale")
+
+ggplot(data = AllFemale20, aes(x = year, y = value, group = 1))+
+  geom_line(color = "red")+
+  geom_point()
+
