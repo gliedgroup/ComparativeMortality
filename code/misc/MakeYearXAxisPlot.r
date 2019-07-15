@@ -16,7 +16,8 @@ ggplot(data = mAllCountriesFemale, aes(x=year, y = value, group = agecat))+
   geom_point(aes(color=agecat))+
   labs(title = "All Countries Female")+
   labs(x = "Year Decade")+
-  labs(y = "Coefficient")
+  labs(y = "Coefficient")+
+  ylim(-.9, 0.9)
 
 #All Countries Male
 AllCountriesMale <- JustTriple[c(2), c(1, 10:15, 17:22, 24:29, 31:36, 38:43, 45:50, 52:57)]
