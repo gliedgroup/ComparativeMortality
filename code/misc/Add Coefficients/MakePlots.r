@@ -8,8 +8,8 @@ ggplot(data = AllCountriesFemale, aes(x=year, y = sum, group = agecat))+
   geom_point(aes(color=agecat))+
   labs(title = "All Countries Female")+
   labs(x = "Year Decade")+
-  labs(y = "Coefficient") + 
-  ylim(-.3, 0.9)
+  labs(y = "Coefficient") +
+  ylim(-.9, 0.9)
 
 #Plot X Axis is Age Category
 ggplot(data = AllCountriesFemale, aes(x=agecat, y = sum, group = year))+
@@ -17,8 +17,8 @@ ggplot(data = AllCountriesFemale, aes(x=agecat, y = sum, group = year))+
   geom_point(aes(color=year))+
   labs(title = "All Countries Female")+
   labs(x = "Age Category")+
-  labs(y = "Coefficient") + 
-  ylim(-.3, 0.9)
+  labs(y = "Coefficient") +
+  ylim(-.9, 0.9)
 
 
 #Graph of All Males
@@ -31,7 +31,8 @@ ggplot(data = AllCountriesMale, aes(x=year, y = sum, group = agecat))+
   geom_point(aes(color=agecat))+
   labs(title = "All Countries Male")+
   labs(x = "Year Decade")+
-  labs(y = "Coefficient") + ylim(-.3, 0.9)
+  labs(y = "Coefficient") +
+  ylim(-.9, 0.9)
 
 #Plot X Axis is Age Category
 ggplot(data = AllCountriesMale, aes(x=agecat, y = sum, group = year))+
@@ -39,8 +40,8 @@ ggplot(data = AllCountriesMale, aes(x=agecat, y = sum, group = year))+
   geom_point(aes(color=year))+
   labs(title = "All Countries Male")+
   labs(x = "Age Category")+
-  labs(y = "Coefficient") + 
-  ylim(-.3, 0.9)
+  labs(y = "Coefficient") +
+  ylim(-.9, 0.9)
 
 #Graph of All Totals
 
@@ -52,8 +53,8 @@ ggplot(data = AllCountriesTotal, aes(x=year, y = sum, group = agecat))+
   geom_point(aes(color=agecat))+
   labs(title = "All Countries Total")+
   labs(x = "Year Decade")+
-  labs(y = "Coefficient") + 
-  ylim(-.3, 0.9)
+  labs(y = "Coefficient") +
+  ylim(-.9, 0.9)
 
 #Plot X Axis is Age Category
 ggplot(data = AllCountriesTotal, aes(x=agecat, y = sum, group = year))+
@@ -61,5 +62,5 @@ ggplot(data = AllCountriesTotal, aes(x=agecat, y = sum, group = year))+
   geom_point(aes(color=year))+
   labs(title = "All Countries Total")+
   labs(x = "Age Category")+
-  labs(y = "Coefficient") + 
-  ylim(-.3, 0.9)
+  labs(y = "Coefficient") +
+  ylim(-.9, 0.9)

@@ -30,7 +30,9 @@ ggplot(data = mAllCountriesMale, aes(x=year, y = value, group = agecat))+
   geom_point(aes(color=agecat))+
   labs(title = "All Countries Male")+
   labs(x = "Year Decade")+
-  labs(y = "Coefficient")
+  labs(y = "Coefficient")+
+  ylim(-.9, 0.9)
+
 
 
 
@@ -46,7 +48,9 @@ ggplot(data = mAllCountriesTotal, aes(x=year, y = value, group = agecat))+
   geom_point(aes(color=agecat))+
   labs(title = "All Countries Total")+
   labs(x = "Year Decade")+
-  labs(y = "Coefficient")
+  labs(y = "Coefficient")+
+  ylim(-.9, 0.9)
+
 
 ##All Countries Female NoLag
 
@@ -61,7 +65,9 @@ ggplot(data = mAllCountriesFemaleNoLag, aes(x=year, y = value, group = agecat))+
   geom_point(aes(color=agecat))+
   labs(title = "All Countries FemaleNoLag")+
   labs(x = "Year Decade")+
-  labs(y = "Coefficient")
+  labs(y = "Coefficient")+
+  ylim(-.9, 0.9)
+
 
 #All Countries Male NoLag
 AllCountriesMaleNoLag <- JustTriple[c(5), c(1, 10:15, 17:22, 24:29, 31:36, 38:43, 45:50, 52:57)]
@@ -75,7 +81,9 @@ ggplot(data = mAllCountriesMaleNoLag, aes(x=year, y = value, group = agecat))+
   geom_point(aes(color=agecat))+
   labs(title = "All Countries MaleNoLag")+
   labs(x = "Year Decade")+
-  labs(y = "Coefficient")
+  labs(y = "Coefficient")+
+  ylim(-.9, 0.9)
+
 
 #All Countries TotalNoLag
 AllCountriesTotalNoLag <- JustTriple[c(6), c(1, 10:15, 17:22, 24:29, 31:36, 38:43, 45:50, 52:57)]
@@ -89,4 +97,5 @@ ggplot(data = mAllCountriesTotalNoLag, aes(x=year, y = value, group = agecat))+
   geom_point(aes(color=agecat))+
   labs(title = "All Countries TotalNoLag")+
   labs(x = "Year Decade")+
-  labs(y = "Coefficient")
+  labs(y = "Coefficient")+
+  ylim(-.9, 0.9)
