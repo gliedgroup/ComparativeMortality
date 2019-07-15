@@ -1,4 +1,5 @@
 #Graph of All Females -.25-+.75
+#Standardize to -.9 to 0.9
 
 AllCountriesFemale <- subset(AddCoef, Model =="AllCountriesFemale") # Subset All Female Model
 
