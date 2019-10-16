@@ -20,17 +20,8 @@ foreach m in $male{
   save "C:/Users/bz22/Desktop/ComparativeMortalityData/RandomStatistics/PopulationByAge/`m'.dta", replace
 }
 
-global country "Australia Canada UK USA"
-foreach m in $male{
-  foreach f in $female{
-    foreach c in $country{
-    use "C:/Users/bz22/Desktop/ComparativeMortalityData/RandomStatistics/PopulationByAge/`m'.dta", clear
-    append using "C:/Users/bz22/Desktop/ComparativeMortalityData/RandomStatistics/PopulationByAge/`f'.dta"
-    save "C:/Users/bz22/Desktop/ComparativeMortalityData/RandomStatistics/PopulationByAge/`c'.dta"
-    }
-  }
-}
 
+global country "Australia Canada UK USA"
 foreach c in $country{
   use "C:/Users/bz22/Desktop/ComparativeMortalityData/RandomStatistics/PopulationByAge/`c'.dta"
   drop if agecat == "EightyfiveToEightynine"|agecat =="ZeroToFour" | agecat == "MoreThanOneHundred" | agecat== "NinetyToNinetyfour" |agecat=="NinetyfiveToNinetynine"
@@ -50,7 +41,7 @@ foreach c in $country{
   replace agecat2 = "70-74" if agecat == "SeventyToSeventyfour"
   replace agecat2 = "75-79" if agecat == "SeventyfiveToSeventyNine"
   replace agecat2 = "80-84" if agecat == "EightyToEightyfour"
-  save "C:/Users/bz22/Desktop/ComparativeMortalityData/RandomStatistics/PopulationByAge/`c'Cleaned.dta"
+  save "C:/Users/bz22/Desktop/ComparativeMortalityData/RandomStatistics/PopulationByAge/`c'Cleaned.dta", replace
 }
 
 foreach c in $country{
@@ -79,5 +70,12 @@ foreach c in $country{
 foreach c in $country{
   use "C:/Users/bz22/Desktop/ComparativeMortalityData/RandomStatistics/PopulationByAge/`c'Cleaned.dta", clear
   drop v1
+  save "C:/Users/bz22/Desktop/ComparativeMortalityData/RandomStatistics/PopulationByAge/`c'Cleaned.dta", replace
+}
+
+foreach c in $country{
+  use "C:/Users/bz22/Desktop/ComparativeMortalityData/RandomStatistics/PopulationByAge/`c'Cleaned.dta", clear
+  rename population populationinthousands
+  gen population = populationinthousands*1000
   save "C:/Users/bz22/Desktop/ComparativeMortalityData/RandomStatistics/PopulationByAge/`c'Cleaned.dta", replace
 }
