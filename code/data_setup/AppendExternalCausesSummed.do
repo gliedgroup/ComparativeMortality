@@ -5,4 +5,5 @@ use "C:/Users/bz22/Desktop/ComparativeMortalityData/RandomStatistics/CoDandPopul
 foreach x in $names{
   append using "C:/Users/bz22/Desktop/ComparativeMortalityData/RandomStatistics/CoDandPopulation/`x'ExternalCausesSummed.dta"
 }
+drop cause 
 save "C:\Users\bz22\Desktop\ComparativeMortalityData\RandomStatistics\CoDandPopulation\AnglophoneExternalCausesSummed.dta"
