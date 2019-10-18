@@ -1,0 +1,11 @@
+use "C:\Users\bz22\Desktop\ComparativeMortalityData\MortalityFromNonExternalCauses\AnglophoneNonExternalCausesSummed.dta"
+rename ExternalCausesMortality NonExternalCausesMortality
+rename ExternalCausesMortalityRate NonExternalCausesMortalityRate
+
+gen logNECMortalityRate = log(NonExternalCausesMortalityRate)
+drop cause
+rename NonExternalCausesMortality NECMortality
+rename NonExternalCausesMortalityRate NECMortalityRate
+
+
+save "C:\Users\bz22\Desktop\ComparativeMortalityData\MortalityFromNonExternalCauses\AnglophoneNonExternalCausesSummed.dta", replace
