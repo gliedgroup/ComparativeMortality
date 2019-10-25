@@ -21,6 +21,10 @@ label define agecat3 1 "5-9" 2 "10-14" 3 "15-19" 4 "20-24" 5 "25-29" 6 "30-34" 7
 label values agecat3 agecat3
 
 egen lnMortalityByAge = median(lnMortality), by(country Year sex agecat3)
+egen MortalityByAge = mean(Mortality), by(country Year sex agecat3)
+
+graph twoway (line MortalityByAge Year if countrystr == "Australia", msize(tiny) msymbol(triangle_hollow)) (line MortalityByAge Year if countrystr == "Canada", msize(tiny) msymbol(square_hollow)) (line MortalityByAge Year if countrystr == "UK", msize(tiny) msymbol(circle_hollow)) (line MortalityByAge Year if countrystr == "USA" , msize(tiny) msymbol(diamond_hollow)) if sex == 1 & Year >1950, by(agecat3, r) legend(label(1 Australia) label(2 Canada) label(3 UK) label(4 USA)) ylabel(, ang(0))
+
 
 graph twoway (line lnMortalityByAge Year if countrystr == "Australia", msize(tiny) msymbol(triangle_hollow)) (line lnMortalityByAge Year if countrystr == "Canada", msize(tiny) msymbol(square_hollow)) (line lnMortalityByAge Year if countrystr == "UK", msize(tiny) msymbol(circle_hollow)) (line lnMortalityByAge Year if countrystr == "USA" , msize(tiny) msymbol(diamond_hollow)) if agecat3 >=7 & agecat3 <=12 , by(sex agecat3, r) legend(label(1 Australia) label(2 Canada) label(3 UK) label(4 USA)) ylabel(, ang(0))
 
