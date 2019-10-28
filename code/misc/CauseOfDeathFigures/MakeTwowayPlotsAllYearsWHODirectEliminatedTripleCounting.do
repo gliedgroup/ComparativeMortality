@@ -26,3 +26,9 @@ graph twoway (scatter ExternalInternalCauseMortality year if countrystr == "Aust
 
 *External Cause Mortality Female 20-64
 graph twoway (scatter ExternalInternalCauseMortality year if countrystr == "Australia", msize(tiny) msymbol(triangle_hollow)) (scatter ExternalInternalCauseMortality year if countrystr == "Canada", msize(tiny) msymbol(square_hollow)) (scatter ExternalInternalCauseMortality year if countrystr == "UK", msize(tiny) msymbol(circle_hollow)) (scatter ExternalInternalCauseMortality year if countrystr == "USA" , msize(tiny) msymbol(diamond_hollow)) if sex == 2 & agecat >= 10 & agecat <19 & ExternalD == 1, by(agecat, r) legend(label(1 Australia) label(2 Canada) label(3 UK) label(4 USA)) ylabel(, ang(0))
+
+
+*All cause Mortality Males
+graph twoway (line AllCauseMortality year if countrystr == "Australia", msize(tiny) msymbol(triangle_hollow)) (line AllCauseMortality year if countrystr == "Canada", msize(tiny) msymbol(square_hollow)) (line AllCauseMortality year if countrystr == "UK", msize(tiny) msymbol(circle_hollow)) (line AllCauseMortality year if countrystr == "USA" , msize(tiny) msymbol(diamond_hollow)) if sex == 1 & AllCauseMortality >0 & agecat == 1, by(agecat, r) legend(label(1 Australia) label(2 Canada) label(3 UK) label(4 USA)) ylabel(, ang(0))
+
+graph twoway (line AllCauseMortalityPer100k year if countrystr == "Australia", msize(tiny) msymbol(triangle_hollow)) (line AllCauseMortalityPer100k year if countrystr == "Canada", msize(tiny) msymbol(square_hollow)) (line AllCauseMortalityPer100k year if countrystr == "UK", msize(tiny) msymbol(circle_hollow)) (line AllCauseMortalityPer100k year if countrystr == "USA" , msize(tiny) msymbol(diamond_hollow)) if sex == 1 & AllCauseMortalityPer100k >0 & agecat == 1, by(agecat, r) legend(label(1 Australia) label(2 Canada) label(3 UK) label(4 USA)) ylabel(, ang(0))
