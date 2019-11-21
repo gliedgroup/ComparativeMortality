@@ -12,7 +12,7 @@ gen sex = .
 replace sex = 1 if sexstr == "Male"
 replace sex = 2 if sexstr == "Female"
 replace countrystr = "USA" if countrystr == "United States of America"
-duplicates drop countrystr year age, force
+duplicates drop countrystr year age sex, force
 egen age95 = sum(value) if age == "95 - 99" | age == "100 +", by(countrystr year sexstr)
 replace age = "95+" if age == "95 - 99"
 drop if age == "100 + "
