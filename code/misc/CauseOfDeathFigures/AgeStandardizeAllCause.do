@@ -1,12 +1,12 @@
-Standardized base population is US1950 
+Standardized base population is US1950
 
-use "C:\Users\bz22\Desktop\ComparativeMortalityData\RandomStatistics\CoDandPopulation\WHODirect\AllAgesAllCauses\AllCauseMortalityPer100kByAgedta", clear
 
+use "C:\Users\bz22\Desktop\ComparativeMortalityData\RandomStatistics\CoDandPopulation\WHODirect\AllAgesAllCauses\AllCauseMortalityPer100kByAge.dta" 
  gen agecat2 = agecat
 
  replace agecat2 = 3 if agecat == 4 | agecat == 5 | agecat == 3
 
- replace agecat2 = 23 if agecat  23 & agecat <26
+ replace agecat2 = 23 if agecat > 23 & agecat <26
 
  replace agecat2 = 2 if agecat == 4 | agecat == 5 | agecat == 6 | agecat == 3
 
@@ -45,8 +45,9 @@ collapse (mean) StandMortPer100k, by(year countrystr sex)
 
 graph twoway (line StandMortPer100k year if countrystr == "Australia", msize(tiny) msymbol(triangle_hollow)) (line StandMortPer100k year if countrystr == "Canada", msize(tiny) msymbol(square_hollow)) (line StandMortPer100k year if countrystr == "UK", msize(tiny) msymbol(circle_hollow)) (line StandMortPer100k year if countrystr == "USA" , msize(tiny) msymbol(diamond_hollow)) if sex == 1 & StandMortPer100k > 0 & year >=1960 , legend(label(1 Australia) label(2 Canada) label(3 UK) label(4 USA)) ylabel(, ang(0)) title(All Cause Standard Mortality Rate Males)
 
+graph export "C:/Users/bz22/Desktop/ComparativeMortality/output/AgeStandardizeGraphs/AllCauseMortalityPer100kMales1950USStandard.pdf", as(pdf) name("Graph") replace
+
 graph twoway (line StandMortPer100k year if countrystr == "Australia", msize(tiny) msymbol(triangle_hollow)) (line StandMortPer100k year if countrystr == "Canada", msize(tiny) msymbol(square_hollow)) (line StandMortPer100k year if countrystr == "UK", msize(tiny) msymbol(circle_hollow)) (line StandMortPer100k year if countrystr == "USA" , msize(tiny) msymbol(diamond_hollow)) if sex == 2 & StandMortPer100k > 0 & year >=1960 , legend(label(1 Australia) label(2 Canada) label(3 UK) label(4 USA)) ylabel(, ang(0)) title(All Cause Standard Mortality Rate Females)
 
 
-
-graph twoway (scatter StandMortPer100k year if countrystr == "Australia", msize(tiny) msymbol(triangle_hollow)) (scatter StandMortPer100k year if countrystr == "Canada", msize(tiny) msymbol(square_hollow)) (scatter StandMortPer100k year if countrystr == "UK", msize(tiny) msymbol(circle_hollow)) (scatter StandMortPer100k year if countrystr == "USA" , msize(tiny) msymbol(diamond_hollow)) if sex == 1 & StandMortPer100k > 0 & year >=1960 , legend(label(1 Australia) label(2 Canada) label(3 UK) label(4 USA)) ylabel(, ang(0)) title(All Cause Standard Mortality Rate Males)
+graph export "C:/Users/bz22/Desktop/ComparativeMortality/output/AgeStandardizeGraphs/AllCauseMortalityPer100kFemales1950USStandard.pdf", as(pdf) name("Graph") replace
