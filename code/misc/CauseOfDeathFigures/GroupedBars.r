@@ -10,6 +10,8 @@ agecat1 =c("7(5-9)", "8(10-14)", "9(15-19)")
 agecat2 = c("10(20-24)", "11(25-29)", "12(30-34)", "13(35-39)", "14(40-44)", "15(45-49)", "16(50-54)", "17(55-59)", "18(60-64)", "19(65-69)", "20(70-74)", "21(75-79)", "22(80-84)")
 
 ## One way of doing this in a loop for future reference
+
+List= unique(ExternalCauses$agecatstr)List= unique(ExternalCauses$agecatstr)
 for (var in seq_along(List)) {
   Graphs=
     (ggplot(subset(ExternalCauses,agecatstr== List[var] & sex == 1 & year%%10==0), aes(fill = countrystr, y = WeightedECMortalityPer100kByAge, x = year ))+
@@ -18,7 +20,7 @@ for (var in seq_along(List)) {
   print(Graphs)
 
   ggsave(Graphs, file=paste(List[var],"Male" , ".pdf", sep=''))
-      
+
 }
 
 ## Males
