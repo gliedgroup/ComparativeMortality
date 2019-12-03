@@ -28,7 +28,7 @@ for (var in seq_along(List)){
 
 for (var in seq_along(List)){
   MaleInternalCause =
-    (ggplot(subset(ExternalAndInternalCauses, agecat2str == List[var] & sex == 1 & year%%10 == 0), aes(fill = countrystr, y = WeightedECMortalityPer100kByAge, x = year))+
+    (ggplot(subset(ExternalAndInternalCauses, agecat2str == List[var] & sex == 1 & year%%10 == 0), aes(fill = countrystr, y = WeightedICMortalityPer100kByAge, x = year))+
        geom_bar(position = "dodge", stat = "identity")+
        ggtitle(paste(List[var], "Male Internal Cause")))
   print(MaleInternalCause)
@@ -38,7 +38,7 @@ for (var in seq_along(List)){
 
 for (var in seq_along(List)){
   FemaleInternalCause =
-    (ggplot(subset(ExternalAndInternalCauses, agecat2str == List[var] & sex == 2 & year%%10 == 0), aes(fill = countrystr, y = WeightedECMortalityPer100kByAge, x = year))+
+    (ggplot(subset(ExternalAndInternalCauses, agecat2str == List[var] & sex == 2 & year%%10 == 0), aes(fill = countrystr, y = WeightedICMortalityPer100kByAge, x = year))+
        geom_bar(position = "dodge", stat = "identity")+
        ggtitle(paste(List[var], "Female Internal Cause")))
   print(FemaleInternalCause)
